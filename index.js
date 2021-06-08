@@ -19,7 +19,7 @@ async function init() {
     await assertDatabaseConnectionOk();
 
 	app.listen(PORT, () => {
-		console.log(`Library System API Server started on port ${PORT}.`);
+		console.log(`API Server started on port ${PORT}.`);
 	});
 }
 

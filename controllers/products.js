@@ -56,7 +56,9 @@ router.post('/', async function(req, res){
         });
         
         if(category && category.id){
-            await models.category.update({image},{where: {id:category.id}});
+            if(image){
+                await models.category.update({image},{where: {id:category.id}});
+            }
             const product =  await models.product.create({
                 name, description, price, expiryDate, categoryId : category.id 
             });
