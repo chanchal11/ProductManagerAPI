@@ -17,10 +17,7 @@ module.exports = (sequelize) => {
 		},
         image: {
 			allowNull: false,
-			type: DataTypes.STRING,
-            validate: {
-                is: /[\s\w]{10,}/
-            }
+			type: DataTypes.STRING
 		}
 	});
 };

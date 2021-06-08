@@ -49,12 +49,13 @@ const paginate = async (models, pageNumber, pageLimit, productName = '') => {
         const search = {
             include: models.category
         };
-        options = {...options, ...search};
         
         if (productName) { 
                 search.where = { name: { [Op.like]: `%${productName}%` } };
         }
 
+        options = {...options, ...search};
+        
         let {count, rows} = await models.product.findAndCountAll(options);
 
         return {
