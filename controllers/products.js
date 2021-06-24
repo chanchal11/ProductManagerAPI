@@ -89,7 +89,7 @@ router.post('/', async function(req, res){
 router.put('/:id', async function(req, res){
 
     try {
-        const { name, description, price, expiryDate, categoryName, image } = req.body;
+        let { name, description, price, expiryDate, categoryName, image } = req.body;
         const { id } = req.params;
         const category = await models.category.findOne({
             where: {name: categoryName},
@@ -120,7 +120,7 @@ router.put('/:id', async function(req, res){
         } 
     
     } catch (error) {
-        console.log(error.message); 
+        console.log(error); 
         res.status(400).send({success: false});       
     }
     
