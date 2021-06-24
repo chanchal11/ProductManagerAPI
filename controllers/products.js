@@ -1,7 +1,7 @@
 var router = require('express').Router();
 
 const { paginate, newObjectWithoutFalsyValues } = require('../utility');
-const { models, model } = require('../models');
+const { models, model } = require('../data');
 
 router.get('/', async function(req, res){
     try {

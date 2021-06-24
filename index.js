@@ -1,5 +1,5 @@
 const app = require('./app');
-const sequelize = require('./models');
+const sequelize = require('./data');
 const PORT = require('./config').port;
 
 async function assertDatabaseConnectionOk() {
